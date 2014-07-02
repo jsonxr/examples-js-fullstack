@@ -8,6 +8,7 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "assert": "^1.1.1",
     "event-stream": "^3.1.5",
     "gulp": "^3.7.0",
     "gulp-angular-templatecache": "^1.1.3",
@@ -27,6 +28,7 @@
     "gulp-sass": "^0.7.2",
     "gulp-uglify": "^0.3.0",
     "jsdoc": "^3.3.0-alpha7",
+    "mocha": "^1.20.1",
     "nodeunit": "^0.9.0"
   },
   "dependencies": {
