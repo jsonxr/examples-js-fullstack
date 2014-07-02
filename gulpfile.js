@@ -164,6 +164,9 @@ gulp.task('default', ['bower', 'sass', 'javascript', 'index', 'watch'], function
     });
 });
 
+gulp.task('dist', function () {
+  console.log('dist task goes here!');
+});
 
 
 // This is for building a dist
