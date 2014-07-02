@@ -13,7 +13,6 @@ var async = require('async');
 var autoprefixer = require('gulp-autoprefixer');
 var plumber = require('gulp-plumber');
 var bower = require('gulp-bower');
-var clean = require('gulp-clean');
 var concat = require('gulp-concat');
 var csso = require('gulp-csso');
 var eventStream = require('event-stream');
@@ -22,6 +21,7 @@ var inject = require("gulp-inject");
 var jshint = require('gulp-jshint');
 var nodemon = require('gulp-nodemon');
 var rename = require('gulp-rename');
+var rimraf = require('gulp-rimraf');
 var sass = require('gulp-sass');
 var templateCache = require('gulp-angular-templatecache');
 var uglify = require('gulp-uglify');
@@ -141,7 +141,8 @@ gulp.task('watch', function() {
   // gulp.watch(['client/**/.js', '!build/public/app.min.js', '!client/vendor'], ['compress']);
 });
 
-gulp.task('clean', function () {
+gulp.task('cleanall', function () {
+  console.log('You will now need to "npm install" and "gulp init" to continue developing...')
   return gulp.src([
     'node_modules',
     'bower_components',
@@ -150,7 +151,15 @@ gulp.task('clean', function () {
     'client/css/*.css',
     'client/index.html'
   ], {read: false})
-    .pipe(clean());
+    .pipe(rimraf());
+});
+
+gulp.task('clean', function () {
+  return gulp.src([
+    'client/css/*.css',
+    'client/index.html'
+  ], {read: false})
+    .pipe(rimraf());
 });
 
 
