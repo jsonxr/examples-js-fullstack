@@ -5,6 +5,9 @@ client/css/bootstrap
 client/css/*.css
 client/fonts
 
+# nodeunit for bamboo build
+test-reports
+
 # bower
 bower_components
 
