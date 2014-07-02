@@ -1,3 +1,14 @@
+# Application specific
+client/vendor
+client/index.html
+client/css/bootstrap
+client/css/*.css
+client/fonts
+
+# bower
+bower_components
+
+
 # Logs
 logs
 *.log
