@@ -141,15 +141,13 @@ gulp.task('watch', function() {
   // gulp.watch(['client/**/.js', '!build/public/app.min.js', '!client/vendor'], ['compress']);
 });
 
-gulp.task('cleanall', function () {
+gulp.task('cleanall', ['clean'], function () {
   console.log('You will now need to "npm install" and "gulp init" to continue developing...')
   return gulp.src([
     'node_modules',
     'bower_components',
     'client/vendor',
-    'client/fonts',
-    'client/css/*.css',
-    'client/index.html'
+    'client/fonts'
   ], {read: false})
     .pipe(rimraf());
 });
@@ -157,7 +155,8 @@ gulp.task('cleanall', function () {
 gulp.task('clean', function () {
   return gulp.src([
     'client/css/*.css',
-    'client/index.html'
+    'client/index.html',
+    'test-reports'
   ], {read: false})
     .pipe(rimraf());
 });
