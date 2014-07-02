@@ -29,6 +29,7 @@
     "gulp-uglify": "^0.3.0",
     "jsdoc": "^3.3.0-alpha7",
     "mocha": "^1.20.1",
+    "mocha-bamboo-reporter": "^1.0.6",
     "nodeunit": "^0.9.0"
   },
   "dependencies": {
