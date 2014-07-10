@@ -20,6 +20,7 @@ var gulp = require('gulp');
 var inject = require("gulp-inject");
 var jshint = require('gulp-jshint');
 var nodemon = require('gulp-nodemon');
+var nodeunit = require('gulp-nodeunit');
 var rename = require('gulp-rename');
 var rimraf = require('gulp-rimraf');
 var sass = require('gulp-sass');
@@ -176,6 +177,15 @@ gulp.task('dist', function () {
   console.log('dist task goes here!');
 });
 
+gulp.task('test', function () {
+  gulp.src('tests/**/*.js')
+          .pipe(nodeunit({
+              reporter: 'junit',
+              reporterOptions: {
+                  output: 'test-reports'
+              }
+          }));
+});
 
 // This is for building a dist
 //gulp.task('default', ['bower', 'vendor', 'sass', 'compress', 'templates', 'watch']);
